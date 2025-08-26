@@ -25,3 +25,6 @@ def room(request, room_name):
 
     messages = Message.objects.filter(room=room).order_by('timestamp')
     return render(request, 'chat/room.html', {'room': room, 'messages': messages})
+
+def landing_page(request):
+    return render(request, 'chat/home.html')
