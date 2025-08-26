@@ -6,7 +6,6 @@ from .models import ChatRoom, Message
 def home(request):
     rooms = ChatRoom.objects.all()
 
-    # Kama user akiingiza room name kwa homepage
     if request.method == "GET" and 'room_name' in request.GET:
         room_name = request.GET.get('room_name')
         return redirect('room', room_name=room_name)
@@ -27,4 +26,4 @@ def room(request, room_name):
     return render(request, 'chat/room.html', {'room': room, 'messages': messages})
 
 def landing_page(request):
-    return render(request, 'chat/home.html')
+    return render(request, 'chat/room.html')

@@ -41,4 +41,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('landing')
+
+def landing_view(request):
+    return render(request, 'accounts/landing.html')
